@@ -8,20 +8,23 @@ body {
   font-weight: 800;
 }
 
-.small-para {
+.para.small-para {
   font-size: 14px;
   font-weight: 800;
-}
+} 
+/*
+  ^added chaining selector to .small-para
+
+  .para.small-para {
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  adds specificity with two class selectors */
 
 .para {
   font-size: 22px;
 }
-
-.confirm {
-  background: green;
-  color: white;
-  font-weight: bold;
-} 
 
 .button {
   background-color: rgb(255, 255, 255);
@@ -29,11 +32,43 @@ body {
   font-size: 20px;
 }
 
-.child {
+.confirm {
+  background: green;
+  color: white;
+  font-weight: bold;
+}
+/* 
+  ^swapped .confirm {...declarations} with .button {...declarations}
+
+  .button {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+  }
+  
+  .confirm {
+    bacground: green;
+    color: white;
+    font-weight: bold;
+  }
+
+  last rule defined gets applied to the element because of rule order */
+
+.text.child {
   color: rgb(0, 0, 0);
   font-weight: 800;
   font-size: 14px;
 }
+/* 
+  ^added chaining selector to .child
+
+  .text.child {
+    color: black;
+    font-weight: 800;
+    font-size: 14px;
+  }
+  
+  having more than one class selectors adds specificity */
 
 div.text {
   color: rgb(0, 0, 0);
